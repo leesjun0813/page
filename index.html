@@ -8,17 +8,42 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
     <header>
-
+        <div id="headerbox">
+            <div id="logo"><a href="index.html"><img src="img/logo.png"></a></div>
+            <div id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div id="menubar">
+                <ul>
+                    <li><a href="#">테마</a></li>
+                    <li><a href="#">지역</a></li>
+                    <li><a href="#">가상여행</a></li>
+                    <li><a href="#">리뷰</a></li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+            <div id="loginbox">
+                <ul>
+                    <li>Login</li>
+                    <li>Join</li>
+                </ul>
+            </div>
+        </div>
     </header>
 
+<div class="clear"></div>
 
     <main>
-       
+       <div id="mainimg"><img src="img/mainimg.PNG"></div>
     </main>
     
+<div class="clear"></div>
 <footer>
     <div id="footerbox">
         <h2>여행가자 주식회사</h2>
@@ -33,5 +58,13 @@
         </ul>
     </div>
 </footer>
+<script>
+ const hamburger = document.getElementById('hamburger');
+const menubar = document.getElementById('menubar');
+
+hamburger.addEventListener('click', function() {
+  menubar.style.display = menubar.style.display === 'none' ? 'block' : 'none';
+});
+</script>
 </body>
 </html>
