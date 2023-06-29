@@ -14,6 +14,7 @@
     <header>
         <div id="headerbox">
             <div id="logo"><a href="index.html"><img src="img/logo.png"></a></div>
+            <div id="hidebar">
             <div id="hamburger">
                 <span></span>
                 <span></span>
@@ -27,6 +28,7 @@
                     <li><a href="#">리뷰</a></li>
                 </ul>
             </div>
+        </div>
             <div class="clear"></div>
             <div id="loginbox">
                 <ul>
@@ -59,11 +61,44 @@
     </div>
 </footer>
 <script>
- const hamburger = document.getElementById('hamburger');
-const menubar = document.getElementById('menubar');
+window.addEventListener('DOMContentLoaded', function() {
+  var hamburger = document.getElementById('hamburger');
+  var hidebar = document.getElementById('hidebar');
+  var menubar = document.getElementById('menubar');
+  var hambergerSpans = hamburger.querySelectorAll('span');
 
-hamburger.addEventListener('click', function() {
-  menubar.style.display = menubar.style.display === 'none' ? 'block' : 'none';
+  hamburger.addEventListener('click', function() {
+    menubar.classList.toggle('open');
+    hidebar.classList.toggle('open');
+    menubar.classList.toggle('close');
+    toggleHamburgerIcon();
+  });
+
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 830) {
+      menubar.classList.remove('open');
+      hidebar.classList.remove('open');
+    } else {
+      menubar.classList.remove('open');
+      hidebar.classList.remove('open');
+      menubar.classList.add('close');
+      resetHamburgerIcon();
+    }
+  });
+  function toggleHamburgerIcon() {
+    hambergerSpans.forEach(function(span) {
+      span.classList.toggle('open');
+    });
+  }
+  function resetHamburgerIcon() {
+    hambergerSpans.forEach(function(span) {
+      span.classList.remove('open');
+    });
+  }
+  if (window.innerWidth <= 830) {
+    menubar.classList.add('close');
+  }
+
 });
 </script>
 </body>

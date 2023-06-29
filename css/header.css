@@ -6,12 +6,11 @@ header {
     height: 80px;
     border-bottom: solid 1px lightgray;
     background-color: #fff;
-    z-index: 999;
+    z-index: 10;
 }
 #headerbox {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 0 20px;
 }
 
@@ -57,7 +56,6 @@ header #loginbox li{
 
 #hamburger {
     display: none;
-    cursor: pointer;
   }
   
   #hamburger span {
@@ -79,9 +77,33 @@ header #loginbox li{
         margin: 0;
     }
 
-    header #headerbox #menubar{
-        display: none;
+
+    #hamburger {
+        display: block;
+        margin-top: 25px;
+        margin-left: 10px;
     }
-   
+    #hamburger span.open {
+        background-color: black;
+      }
     
+    header #hidebar.open {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 270px;
+        height: 400px;
+        background-color: rgb(255, 255, 255, 0.8);
+        border-radius: 45px;
+        z-index: 11;
+    }
+    header #headerbox #menubar.close{
+        display: none;
+
+    }
+    header #headerbox #menubar.open{
+        display: block;
+
+    }
+
 }
